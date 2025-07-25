@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sani Lawal Sani | eHealthAfrica</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        /* Header styles */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        
+        /* Main content styles */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .greeting {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s, transform 0.8s;
+        }
+        
+        .greeting.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .name {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #3498db;
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s 0.3s, transform 0.8s 0.3s;
+        }
+        
+        .name.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Footer styles */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .greeting {
+                font-size: 2rem;
+            }
+            
+            .name {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Example1</div>
+    </header>
+    
+    <main class="main-content">
+        <h1 class="greeting">Hello eHealthAfrica,</h1>
+        <h2 class="name">I'm Sani Lawal Sani</h2>
+    </main>
+    
+    <footer>
+        &copy; <span id="year"></span> All rights reserved.
+    </footer>
+    
+    <script>
+        // Simple animation to reveal content
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year in footer
+            document.getElementById('year').textContent = new Date().getFullYear();
+            
+            // Add show class to elements after a short delay
+            setTimeout(() => {
+                document.querySelector('.greeting').classList.add('show');
+            }, 200);
+            
+            setTimeout(() => {
+                document.querySelector('.name').classList.add('show');
+            }, 500);
+            
+            // Optional: Add a subtle hover effect to the name
+            const nameElement = document.querySelector('.name');
+            nameElement.addEventListener('mouseover', () => {
+                nameElement.style.color = '#2980b9';
+            });
+            
+            nameElement.addEventListener('mouseout', () => {
+                nameElement.style.color = '#3498db';
+            });
+        });
+    </script>
+</body>
+</html>
